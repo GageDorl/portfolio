@@ -1,0 +1,86 @@
+import { Navbar, Card, Pill, Project } from './components/index.ripple';
+
+export component App() {
+	<div class="app">
+		<Navbar />
+		<div class="content">
+			<Card>
+				<div class="title">
+					<h1>{`Gage D'Orlando`}</h1>
+					<h2>{`Full Stack Web Developer`}</h2>
+				</div>
+				<p>{`Passionate about crafting seamless digital experiences, I specialize in building robust web applications that blend functionality with elegant design. With a strong foundation in both frontend and backend technologies, I thrive on turning complex problems into intuitive solutions. Let's create something amazing together!`}</p>
+				<div>
+					<h2>{`Technologies`}</h2>
+					<div class="technologies flex flex-wrap gap-2">
+						const technologies = [
+							{ name: 'JavaScript', type: 'Language' },
+							{ name: 'HTML', type: 'Frontend' },
+							{ name: 'CSS', type: 'Frontend' },
+							{ name: 'Node.js', type: 'Backend' },
+							{ name: 'React', type: 'Frontend' },
+							{ name: 'React Router v7', type: 'Frontend' },
+							{ name: 'PostgreSQL', type: 'Database' },
+							{ name: 'TypeScript', type: 'Language' },
+
+							// Frontend
+							{ name: 'Angular', type: 'Frontend' },
+							{ name: 'SvelteKit', type: 'Frontend' },
+
+							// Backend
+							{ name: 'Express.js', type: 'Backend' },
+
+							// Databases
+							{ name: 'MongoDB', type: 'Database' },
+						];
+						
+						for (const tech of technologies) {
+							<Pill classes={tech.type.toLowerCase()} name={tech.name} />
+						};
+					</div>
+				</div>
+				<div class="buttons">
+					<a href="#projects">
+						{`Projects`}
+					</a>
+					<a href="#contact">
+						{`Contact`}
+					</a>
+				</div>
+			</Card>
+			<Card id="projects">
+				<div class="title">
+					<h2>{`Projects`}</h2>
+				</div>
+				<div class="project-list flex flex-col gap-4">
+					const projects = [
+						{
+							title: 'ClimbersDen',
+							description: 'Social platform for climbers to connect, find crags, and plan trips.',
+							link: 'https://climbersden.gagedorl.com',
+							files: 'https://github.com/gagedorl/climbersdenreactrouterv7'
+						},
+						{
+							title: 'HeartSync',
+							description: 'Relationship management app to track important dates, shared memories, and future plans.',
+							link: 'https://heartsync.gagedorl.com',
+							files: 'https://github.com/gagedorl/heartsyncapi'
+						}
+					];
+					for (const project of projects) {
+						<Project title={project.title} description={project.description} link={project.link} files={project.files} />
+					}
+				</div>
+			</Card>
+			<Card id="about">
+				<div class="title">
+					<h2>{`About Me`}</h2>
+				</div>
+				<p>{`I like building webs applications that are functional, relevant, and visually appealing. My goal is to create user experiences that are both intuitive and engaging. Outside of coding, I enjoy rock climbing, playing guitar, and learning new technologies.`}</p>
+			</Card>
+		</div>
+	</div>
+	<style>
+		
+	</style>
+}

@@ -1,0 +1,23 @@
+export component Pill({classes, name}: { classes: string, name: string }) {
+    <div class={`pill ${classes}`}>
+        {name}
+    </div>
+    <style>
+        .pill{
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius);
+            background: var(--panel);
+            border:1px solid var(--border);
+            font-size: 0.875rem;
+        }
+        .frontend{
+            background: rgba(45,107,255,.12);
+            border-color: rgba(45,107,255,.24);
+        }
+        .backend{
+            background: rgba(255,45,45,.12);
+            border-color: rgba(255,45,45,.24);
+        }
+    </style>
+}

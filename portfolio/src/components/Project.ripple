@@ -1,0 +1,24 @@
+export component Project(props: {title: string, description: string, link: string, files: string}){
+    <div class="project">
+        <h3>{props.title}</h3>
+        <p>{props.description}</p>
+        <div class="buttons">
+            <a href={props.link} target="_blank" rel="noopener noreferrer">{'View Project'}</a>
+            <a href={props.files} target="_blank" rel="noopener noreferrer">{'View Files'}</a>
+        </div>
+    </div>
+    <style>
+        .project{
+            border:1px solid rgba(255,255,255,.12);
+            background: rgba(0,0,0,.14);
+            border-radius: var(--radius);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            p{
+                color: var(--muted);
+            }
+        }
+    </style>
+}
